@@ -4,7 +4,7 @@ import Fade from './Fade';
 class Header extends React.Component {
   render(){
     return(
-      <Fade timer='5s'>
+      <Fade timer='2s'>
           <h1 className={css.title}>Omar Tsai</h1>
       </Fade>
     )

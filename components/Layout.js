@@ -1,6 +1,7 @@
 import Header from './Header';
 import React, { Component } from 'react';
-import layoutCSS from '../styles/components/Layout.css'; // keep here to set body and html attributes
+import layoutCSS from '../styles/components/Layout.css';
+import Navbar from './Navbar';
 
 // for full screen background image
 const headerStyle = {
@@ -25,6 +26,7 @@ class Layout extends Component {
         <Header />
         <span className = {layoutCSS.content}>
           {this.props.children}
+          <Navbar />
         </span>
       </div>
     )
