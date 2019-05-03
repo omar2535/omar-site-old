@@ -1,9 +1,14 @@
 import css from '../styles/components/Header.css';
+import Fade from './Fade';
 
-export default function Header(props) {
-  return (
-    <div>
-      <h1 className={css.title}>Omar Tsai</h1>
-    </div>
-  )
+class Header extends React.Component {
+  render(){
+    return(
+      <Fade timer='5s'>
+          <h1 className={css.title}>Omar Tsai</h1>
+      </Fade>
+    )
+  }
 }
+
+export default Header;
