@@ -1,24 +1,11 @@
-.header {
-  background-image: url('/static/images/background.jpg');
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.caption {
+.title {
   position: absolute;
-  left: 0;
-  top: 50%;
+  left: 50%;
+  top: 10%;
   width: 100%;
   text-align: center;
-  color: #000;
-}
-
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
+  color: rgb(255, 255, 255);
   font-size: 25px;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
+  transform: translate(-50%, -50%);
 }

@@ -5,3 +5,18 @@ body, html{
   sans-serif;
   color: #777;
 }
+
+.background{
+  position: fixed;
+  height: 100%;
+  width: auto;
+}
+
+.content{
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}

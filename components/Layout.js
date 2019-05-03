@@ -1,11 +1,19 @@
 import Header from './Header';
-import css from '../styles/components/Layout.css'; // keep here to set body and html attributes
+import layoutCSS from '../styles/components/Layout.css'; // keep here to set body and html attributes
+
+const headerStyle = {
+  height: `100vh`
+};
 
 export default function Layout(props) {
   return (
-    <div>
+    <div style={headerStyle}>
+      <img className = {layoutCSS.background} src={'/static/images/background.jpg'}>
+      </img>
       <Header />
-      {props.children}
+      <span className = {layoutCSS.content}>
+        {props.children}
+      </span>
     </div>
   )
 }
