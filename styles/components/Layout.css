@@ -18,8 +18,9 @@ body, html{
 
 .background {
   position: fixed;
-  height: 100%;
+  height: 130%;
   width: auto;
+  transform: translateY(-20%);
   /* non selectable background */
   user-select: none;
   -webkit-touch-callout: none;
