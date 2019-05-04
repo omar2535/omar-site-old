@@ -50,14 +50,17 @@ class Popup extends React.Component{
           }
           .popup_inner{
             position: absolute;
-            left: 25%;
+            padding-top: 10px;
+            left: 15%;
             right: 25%;
             top: 25%;
             bottom: 25%;
+            width: 70%;
             height: 80%;
             margin: auto;
             background: rgba(0,0,0, 0.7);
             border-radius: 20px;
+            overflow:auto;
           }
           .close-popup-button{
             float: right;
@@ -73,6 +76,12 @@ class Popup extends React.Component{
           }
           button:focus {
             outline: 0 !important;
+          }
+
+          .popup-content{
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: 1em;
           }
           
           @keyframes fadein {
@@ -103,11 +112,36 @@ class Popup extends React.Component{
               from { opacity: 0; }
               to   { opacity: 1; }
           }
+          
+          /* For Scrollbar */
+          /* width */
+          ::-webkit-scrollbar {
+            width: 10px;
+          }
+
+          /* Track */
+          ::-webkit-scrollbar-track {
+            background: transparent; 
+          }
+          
+          /* Handle */
+          ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #888; 
+          }
+
+          /* Handle on hover */
+          ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            border-radius: 10px;
+          }
         `}
         </style>
         <div className='popup_inner'>
           <button className='close-popup-button' onClick={this.props.closePopup}>&#10006;</button>
-          {this.props.children}
+          <div className='popup-content'>
+            {this.props.children}
+          </div>
         </div>
       </div>
     )
