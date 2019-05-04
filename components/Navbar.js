@@ -1,6 +1,7 @@
 import React from 'react';
 import Fade from './Fade';
 import Popup from './Popup';
+import popupsComponents from './popups/PopupComponentExporter';
 
 class Navbar extends React.Component{
 
@@ -63,20 +64,24 @@ class Navbar extends React.Component{
               .btn-group .button:last-child {
                 border-radius: 0px 20px 20px 0px;
               }
+              button:focus {
+                outline: 0 !important;
+              }
             `}
           </style>
           <Fade timer='5s'>
-            <button className="button" onClick={this.openPopup.bind(this, 'Intro')}>Intro</button>
-            <button className="button" onClick={this.openPopup.bind(this, 'Work')}>Work</button>
-            <button className="button" onClick={this.openPopup.bind(this, 'About')}>About</button>
-            <button className="button" onClick={this.openPopup.bind(this, 'Contact')}>Contact</button>
+            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Intro)}>Intro</button>
+            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Work)}>Work</button>
+            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.About)}>About</button>
+            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Contact)}>Contact</button>
           </Fade>
         </div>
-        <Popup closePopup={this.closePopup.bind(this)}>
-          {
-            console.log(this.state)
-          }
-        </Popup>
+        {this.state.showPopup?
+          <Popup closePopup={this.closePopup.bind(this)}>
+            {this.state.currentPopup()}
+          </Popup>
+          : null
+        }
       </div>
     )
   }
