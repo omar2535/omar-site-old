@@ -2,12 +2,10 @@
 
 import Intro from './Intro';
 import Contact from './Contact';
-import About from './About';
-import Work from './Work';
+import Portfolio from './Portfolio';
 
 export default {
   Intro,
-  Work,
-  About,
+  Portfolio,
   Contact
 };

@@ -7,12 +7,11 @@ class Popup extends React.Component{
   }
 
   componentDidMount(){
-    this._ismounted = true;
     var css = `
-    -webkit-filter: blur(3px);
-    filter: blur(3px);
-    -webkit-transition: 5s ease -in -out;
-    transition: all 1s ease-out;
+      -webkit-filter: blur(3px);
+      filter: blur(3px);
+      -webkit-transition: 5s ease -in -out;
+      transition: all 1s ease-out;
     `;
     var elements = document.getElementsByClassName('blurrable');
     for(let element of elements){
@@ -21,7 +20,6 @@ class Popup extends React.Component{
   }
 
   componentWillUnmount() {
-    this._ismounted = false;
     var elements = document.getElementsByClassName('blurrable');
     for (let element of elements) {
       element.style.filter = 'blur(0px)';
@@ -74,10 +72,6 @@ class Popup extends React.Component{
           .close-popup-button:hover{
             color: gray;
           }
-          button:focus {
-            outline: 0 !important;
-          }
-
           .popup-content{
             padding-left: 1em;
             padding-right: 1em;

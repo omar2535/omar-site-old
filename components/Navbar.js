@@ -1,6 +1,5 @@
 import React from 'react';
 import Fade from './Fade';
-import popupsComponents from './popups/PopupComponentExporter';
 import PopupComponentExporter from './popups/PopupComponentExporter';
 
 class Navbar extends React.Component{
@@ -43,16 +42,12 @@ class Navbar extends React.Component{
               .btn-group .button:last-child {
                 border-radius: 0px 20px 20px 0px;
               }
-              button:focus {
-                outline: 0 !important;
-              }
             `}
           </style>
           <Fade timer='5s' name='buttons'>
             <button className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Intro)}>Intro</button>
-            <button className="button" onClick={this.props.openPopup.bind(this, popupsComponents.Work)}>Work</button>
-            <button className="button" onClick={this.props.openPopup.bind(this, popupsComponents.About)}>About</button>
-            <button className="button" onClick={this.props.openPopup.bind(this, popupsComponents.Contact)}>Contact</button>
+            <button className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Portfolio)}>Portfolio</button>
+            <button className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Contact)}>Contact</button>
           </Fade>
         </div>
       </div>

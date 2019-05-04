@@ -36,18 +36,24 @@ class Layout extends Component {
   render(){
     return (
       <div style={headerStyle}>
+        <style global jsx>{`
+          button:focus {
+            outline: 0 !important;
+          }
+        `}
+        </style>
         <img id='background-image' className={`${layoutCSS.background} blurrable`} src={'/static/images/background.jpg'}/>
         <Header />
         <span className = {`${layoutCSS.content}`}>
           {this.props.children}
           <Navbar closePopup={this.closePopup.bind(this)} openPopup={this.openPopup.bind(this)}/>
-          {this.state.showPopup ?
-            <Popup closePopup={this.closePopup.bind(this)}>
-              {this.state.currentPopup()}
-            </Popup>
-            : null
-          }
         </span>
+        {this.state.showPopup ?
+          <Popup closePopup={this.closePopup.bind(this)}>
+            {this.state.currentPopup()}
+          </Popup>
+          : null
+        }
       </div>
     )
   }

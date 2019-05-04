@@ -1,4 +1,4 @@
-function Work(props) {
+function Portfolio(props) {
   return (
     <div>
       <p> My works </p>
@@ -6,4 +6,4 @@ function Work(props) {
   )
 }
 
-export default Work;
+export default Portfolio;
