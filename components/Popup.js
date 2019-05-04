@@ -12,20 +12,20 @@ class Popup extends React.Component{
     -webkit-filter: blur(3px);
     filter: blur(3px);
     -webkit-transition: 5s ease -in -out;
-    transition: all 0.5s ease-out;
+    transition: all 1s ease-out;
     `;
-    document.getElementById('background-image').style.cssText = css;
-    document.getElementById('main-text').style.cssText = css;
-    document.getElementById('btn-group').style.cssText = css;
-    document.getElementById('title').style.cssText = css;
+    var elements = document.getElementsByClassName('blurrable');
+    for(let element of elements){
+      element.style.cssText = css;
+    }
   }
 
   componentWillUnmount() {
     this._ismounted = false;
-    document.getElementById('background-image').style.filter = 'blur(0px)';
-    document.getElementById('main-text').style.filter = 'blur(0px)';
-    document.getElementById('btn-group').style.filter = 'blur(0px)';
-    document.getElementById('title').style.filter = 'blur(0px)';
+    var elements = document.getElementsByClassName('blurrable');
+    for (let element of elements) {
+      element.style.filter = 'blur(0px)';
+    }
   }
 
   render(){

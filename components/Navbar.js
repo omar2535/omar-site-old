@@ -32,7 +32,7 @@ class Navbar extends React.Component{
   render(){
     return(
       <div>
-        <div className="btn-group" id='btn-group'>
+        <div className={`blurrable btn-group`} id='btn-group'>
           <style jsx>
             {`
               .Navbar{
