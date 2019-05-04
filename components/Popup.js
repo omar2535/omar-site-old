@@ -33,20 +33,20 @@ class Popup extends React.Component{
       <div className='popup' data-effect="mfp-move-from-top" id='popup'>
         <style jsx>{`
           .popup{
-              position: fixed;
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              margin: auto;
-              background-color: rgba(0,0,0,0);
-              -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-              -moz-animation: fadein 1s; /* Firefox < 16 */
-              -ms-animation: fadein 1s; /* Internet Explorer */
-              -o-animation: fadein 1s; /* Opera < 12.1 */
-              animation: fadein 1s;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: rgba(0,0,0,0);
+            -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 1s; /* Firefox < 16 */
+            -ms-animation: fadein 1s; /* Internet Explorer */
+            -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
           }
           .popup_inner{
             position: absolute;
@@ -111,29 +111,6 @@ class Popup extends React.Component{
           @-o-keyframes fadein {
               from { opacity: 0; }
               to   { opacity: 1; }
-          }
-          
-          /* For Scrollbar */
-          /* width */
-          ::-webkit-scrollbar {
-            width: 10px;
-          }
-
-          /* Track */
-          ::-webkit-scrollbar-track {
-            background: transparent; 
-          }
-          
-          /* Handle */
-          ::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            background: #888; 
-          }
-
-          /* Handle on hover */
-          ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-            border-radius: 10px;
           }
         `}
         </style>
