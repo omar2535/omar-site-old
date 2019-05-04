@@ -15,8 +15,10 @@ class Layout extends Component {
       mounted: false
     };
   }
-
-  componentDidMount(){
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
   }
 
   render(){
