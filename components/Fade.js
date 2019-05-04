@@ -5,7 +5,7 @@ class Fade extends React.Component{
     super(props);
     this.state = {
       visible: false,
-      uuid: uuidv1()
+      name: props.name ? props.name : 'general'
     };
   }
 
@@ -15,19 +15,20 @@ class Fade extends React.Component{
 
   // defaults to 2 seconds timer
   retrieveTimer(){
+    console.log(this.state);
     return this.props.timer ? `${this.props.timer}` : '2s';
   }
 
   render() {
     return (
-      <div className={this.state.visible ? `fadeIn_${this.state.uuid}` : 'fadeOut'}>
+      <div className={this.state.visible ? `fadeIn_${this.state.name}` : `fadeOut_${this.state.name}`}>
         <style jsx>
           {`
-          .fadeOut{
+          .fadeOut_${this.state.name}{
             opacity:0;
             transition: opacity 0.2s;
           }
-          .fadeIn_${this.state.uuid}{
+          .fadeIn_${this.state.name}{
             opacity:1;
             transition: opacity ${this.retrieveTimer()};
           }

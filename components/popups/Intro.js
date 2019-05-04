@@ -10,8 +10,8 @@
 
 function Intro(props){
   return(
-    <div>
-      Hi, my name is Omar
+    <div className = 'popup-component'>
+      <p>Hi, my name is Omar</p>
     </div>
   )
 }

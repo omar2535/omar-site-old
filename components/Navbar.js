@@ -69,7 +69,7 @@ class Navbar extends React.Component{
               }
             `}
           </style>
-          <Fade timer='5s'>
+          <Fade timer='5s' name='buttons'>
             <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Intro)}>Intro</button>
             <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Work)}>Work</button>
             <button className="button" onClick={this.openPopup.bind(this, popupsComponents.About)}>About</button>
@@ -77,9 +77,11 @@ class Navbar extends React.Component{
           </Fade>
         </div>
         {this.state.showPopup?
-          <Popup closePopup={this.closePopup.bind(this)}>
-            {this.state.currentPopup()}
-          </Popup>
+          <Fade timer='20s' name='popup'>
+            <Popup closePopup={this.closePopup.bind(this)}>
+              {this.state.currentPopup()}
+            </Popup>
+          </Fade>
           : null
         }
       </div>
