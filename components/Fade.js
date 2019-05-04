@@ -15,7 +15,6 @@ class Fade extends React.Component{
 
   // defaults to 2 seconds timer
   retrieveTimer(){
-    console.log(this.state);
     return this.props.timer ? `${this.props.timer}` : '2s';
   }
 

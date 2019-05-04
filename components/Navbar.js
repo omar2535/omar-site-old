@@ -32,7 +32,7 @@ class Navbar extends React.Component{
   render(){
     return(
       <div>
-        <div className="btn-group">
+        <div className="btn-group" id='btn-group'>
           <style jsx>
             {`
               .Navbar{
@@ -77,11 +77,9 @@ class Navbar extends React.Component{
           </Fade>
         </div>
         {this.state.showPopup?
-          <Fade timer='20s' name='popup'>
             <Popup closePopup={this.closePopup.bind(this)}>
               {this.state.currentPopup()}
             </Popup>
-          </Fade>
           : null
         }
       </div>

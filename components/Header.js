@@ -5,7 +5,7 @@ class Header extends React.Component {
   render(){
     return(
       <Fade timer='2s' name='header'>
-          <h1 className={css.title}>OMAR TSAI</h1>
+          <h1 className={css.title} id='title'>OMAR TSAI</h1>
       </Fade>
     )
   }

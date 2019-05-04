@@ -24,7 +24,7 @@ class Layout extends Component {
   render(){
     return (
       <div style={headerStyle}>
-        <img className = {layoutCSS.background} src={'/static/images/background.jpg'}/>
+        <img id='background-image' className = {layoutCSS.background} src={'/static/images/background.jpg'}/>
         <Header />
         <span className = {layoutCSS.content}>
           {this.props.children}
