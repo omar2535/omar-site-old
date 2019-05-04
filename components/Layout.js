@@ -2,6 +2,7 @@ import Header from './Header';
 import React, { Component } from 'react';
 import layoutCSS from '../styles/components/Layout.css';
 import Navbar from './Navbar';
+import Popup from './Popup';
 
 // for full screen background image
 const headerStyle = {
@@ -12,12 +13,23 @@ class Layout extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mounted: false
+      currentPopup: null,
+      showPopup: false
     };
   }
-  togglePopup() {
+  // custom open popup function
+  openPopup(buttonName) {
     this.setState({
-      showPopup: !this.state.showPopup
+      showPopup: true,
+      currentPopup: buttonName
+    });
+  }
+
+  // custom closePopup function
+  closePopup() {
+    this.setState({
+      showPopup: false,
+      currentPopup: null
     });
   }
 
@@ -28,7 +40,13 @@ class Layout extends Component {
         <Header />
         <span className = {`${layoutCSS.content}`}>
           {this.props.children}
-          <Navbar />
+          <Navbar closePopup={this.closePopup.bind(this)} openPopup={this.openPopup.bind(this)}/>
+          {this.state.showPopup ?
+            <Popup closePopup={this.closePopup.bind(this)}>
+              {this.state.currentPopup()}
+            </Popup>
+            : null
+          }
         </span>
       </div>
     )

@@ -1,32 +1,11 @@
 import React from 'react';
 import Fade from './Fade';
-import Popup from './Popup';
 import popupsComponents from './popups/PopupComponentExporter';
+import PopupComponentExporter from './popups/PopupComponentExporter';
 
 class Navbar extends React.Component{
-
   constructor(props){
     super(props);
-    this.state = {
-      currentPopup: null,
-      showPopup: false
-    };
-  }
-
-  // custom open popup function
-  openPopup(buttonName) {
-    this.setState({
-      showPopup: true,
-      currentPopup: buttonName
-    });
-  }
-
-  // custom closePopup function
-  closePopup(){
-    this.setState({
-      showPopup: false,
-      currentPopup: null
-    });
   }
 
   render(){
@@ -70,18 +49,12 @@ class Navbar extends React.Component{
             `}
           </style>
           <Fade timer='5s' name='buttons'>
-            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Intro)}>Intro</button>
-            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Work)}>Work</button>
-            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.About)}>About</button>
-            <button className="button" onClick={this.openPopup.bind(this, popupsComponents.Contact)}>Contact</button>
+            <button className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Intro)}>Intro</button>
+            <button className="button" onClick={this.props.openPopup.bind(this, popupsComponents.Work)}>Work</button>
+            <button className="button" onClick={this.props.openPopup.bind(this, popupsComponents.About)}>About</button>
+            <button className="button" onClick={this.props.openPopup.bind(this, popupsComponents.Contact)}>Contact</button>
           </Fade>
         </div>
-        {this.state.showPopup?
-            <Popup closePopup={this.closePopup.bind(this)}>
-              {this.state.currentPopup()}
-            </Popup>
-          : null
-        }
       </div>
     )
   }
