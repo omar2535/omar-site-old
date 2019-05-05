@@ -7,19 +7,80 @@ import '../styles/components/Popup.css';
 class Popup extends React.Component{
   constructor(props){
     super(props);
+    this.setMountAnimation = this.setMountAnimation.bind(this);
+    this.setUnmountAnimation = this.setUnmountAnimation.bind(this);
+    this.unMount = this.unMount.bind(this);
+    this.state = {
+      style: `
+          .popup_inner{
+            -webkit-animation-name: zoom;
+            animation-name: zoom;
+          }
+          @-webkit-keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+          }
+          @keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+          }
+      `
+    };
   }
 
   componentDidMount(){
+    setTimeout(this.setMountAnimation, 10); // to make it async
     var css = `
       -webkit-filter: blur(3px);
       filter: blur(3px);
       -webkit-transition: 5s ease -in -out;
-      transition: all 1s ease-out;
+      transition: all 0.5s ease-out;
     `;
     var elements = document.getElementsByClassName('blurrable');
     for(let element of elements){
       element.style.cssText = css;
     }
+  }
+
+  // to set zoom animation when component mounts
+  setMountAnimation(){
+    this.setState({
+      style: `
+          .popup_inner{
+            -webkit-animation-name: zoom;
+            animation-name: zoom;
+          }
+          @-webkit-keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+          }
+          @keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+          }
+      `
+    });
+  }
+
+  setUnmountAnimation(){
+    this.setState({
+      style: `
+          .popup_inner{
+            -webkit-animation-name: zoom_out;
+            animation-name: zoom_out;
+          }
+          @-webkit-keyframes zoom_out {
+            0% {transform: scale(1); opacity: 1;}
+            99% {transform: scale(0); opacity: 1;}
+            100% {transform: scale(0); opacity: 0;}
+          }
+          @keyframes zoom_out {
+            0% {transform: scale(1); opacity: 1;}
+            99% {transform: scale(0); opacity: 1;}
+            100% {transform: scale(0); opacity: 0;}
+          }
+      `
+    });
   }
 
   componentWillUnmount() {
@@ -29,14 +90,16 @@ class Popup extends React.Component{
     }
   }
 
-  fadeAndClosePopup(){
-
+  unMount(){
+    this.setUnmountAnimation();
+    setTimeout(this.props.closePopup, 500);
   }
 
   render(){
     return(
       <div className='popup' data-effect="mfp-move-from-top" id='popup'>
         <style jsx>{`
+          ${this.state.style}
           .popup{
             position: fixed;
             width: 100%;
@@ -62,18 +125,8 @@ class Popup extends React.Component{
             border-radius: 20px;
             overflow:auto;
             transition: transform .2s;
-            -webkit-animation-name: zoom;
             -webkit-animation-duration: 0.5s;
-            animation-name: zoom;
             animation-duration: 0.5s;
-          }
-          @-webkit-keyframes zoom {
-            from {transform: scale(0);}
-            to {transform: scale(1);}
-          }
-          @keyframes zoom {
-            from {transform: scale(0);}
-            to {transform: scale(1);}
           }
           .close-popup-button{
             float: right;
@@ -95,7 +148,7 @@ class Popup extends React.Component{
         `}
         </style>
         <div className='popup_inner'>
-          <button className='close-popup-button' onClick={this.props.closePopup}>&#10006;</button>
+          <button className='close-popup-button' onClick={this.unMount}>&#10006;</button>
           <div className='popup-content zoom'>
             {this.props.children}
           </div>
