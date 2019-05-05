@@ -29,6 +29,10 @@ class Popup extends React.Component{
     }
   }
 
+  fadeAndClosePopup(){
+
+  }
+
   render(){
     return(
       <div className='popup' data-effect="mfp-move-from-top" id='popup'>
@@ -43,11 +47,6 @@ class Popup extends React.Component{
             bottom: 0;
             margin: auto;
             background-color: rgba(0,0,0,0);
-            -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 1s; /* Firefox < 16 */
-            -ms-animation: fadein 1s; /* Internet Explorer */
-            -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
           }
           .popup_inner{
             position: absolute;
@@ -62,6 +61,19 @@ class Popup extends React.Component{
             background: rgba(0,0,0, 0.7);
             border-radius: 20px;
             overflow:auto;
+            transition: transform .2s;
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.5s;
+            animation-name: zoom;
+            animation-duration: 0.5s;
+          }
+          @-webkit-keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+          }
+          @keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
           }
           .close-popup-button{
             float: right;
@@ -78,42 +90,13 @@ class Popup extends React.Component{
           .popup-content{
             padding-left: 1em;
             padding-right: 1em;
-            padding-top: 1em;
-          }
-          
-          @keyframes fadein {
-              from { opacity: 0; }
-              to   { opacity: 1; }
-          }
-
-          /* Firefox < 16 */
-          @-moz-keyframes fadein {
-              from { opacity: 0; }
-              to   { opacity: 1; }
-          }
-
-          /* Safari, Chrome and Opera > 12.1 */
-          @-webkit-keyframes fadein {
-              from { opacity: 0; }
-              to   { opacity: 1; }
-          }
-
-          /* Internet Explorer */
-          @-ms-keyframes fadein {
-              from { opacity: 0; }
-              to   { opacity: 1; }
-          }
-
-          /* Opera < 12.1 */
-          @-o-keyframes fadein {
-              from { opacity: 0; }
-              to   { opacity: 1; }
+            padding-top: 1em
           }
         `}
         </style>
         <div className='popup_inner'>
           <button className='close-popup-button' onClick={this.props.closePopup}>&#10006;</button>
-          <div className='popup-content'>
+          <div className='popup-content zoom'>
             {this.props.children}
           </div>
         </div>

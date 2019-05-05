@@ -39,7 +39,7 @@ class Layout extends Component {
     let PopupInstance = this.state.currentPopup;
     return (
       <PopupInstance />
-    )
+    );
   }
 
   render(){
@@ -55,7 +55,7 @@ class Layout extends Component {
         <Header />
         <span className = {`${layoutCSS.content}`}>
           {this.props.children}
-          <Navbar closePopup={this.closePopup.bind(this)} openPopup={this.openPopup.bind(this)}/>
+          <Navbar openPopup={this.openPopup.bind(this)}/>
         </span>
         {this.state.showPopup ?
           <Popup closePopup={this.closePopup.bind(this)}>
