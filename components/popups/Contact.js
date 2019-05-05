@@ -16,10 +16,10 @@ function Contact(props){
         li{
           font-size: 3em;
         }
-        a:visited { text-decoration: none; color:red; }
-        a:hover { text-decoration: none; color:blue; }
-        a:focus { text-decoration: none; color:yellow; }
-        a:hover, a:active { text-decoration: none; color:black }
+        a:visited { text-decoration: none; color:white; }
+        a:hover { text-decoration: none; color:gray; }
+        a:focus { text-decoration: none; color:white; }
+        a:hover, a:active { text-decoration: none; color:gray }
       `}
 
       </style>
