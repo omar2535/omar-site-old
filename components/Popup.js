@@ -68,6 +68,7 @@ class Popup extends React.Component{
           .popup_inner{
             -webkit-animation-name: zoom_out;
             animation-name: zoom_out;
+            opacity: 0;
           }
           @-webkit-keyframes zoom_out {
             0% {transform: scale(1); opacity: 1;}
