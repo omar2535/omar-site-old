@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import layoutCSS from '../styles/components/Layout.css';
 import Navbar from './Navbar';
 import Popup from './Popup';
+import Contact from '../components/popups/Contact';
 
 // for full screen background image
 const headerStyle = {
   height: `100vh`
 };
 
+// main layout of website
 class Layout extends Component {
   constructor(props){
     super(props);
@@ -32,6 +34,13 @@ class Layout extends Component {
       currentPopup: null
     });
   }
+  // function to dynamically generate popup content
+  generatePopup(){
+    let PopupInstance = this.state.currentPopup;
+    return (
+      <PopupInstance />
+    )
+  }
 
   render(){
     return (
@@ -50,7 +59,7 @@ class Layout extends Component {
         </span>
         {this.state.showPopup ?
           <Popup closePopup={this.closePopup.bind(this)}>
-            {this.state.currentPopup()}
+            {this.generatePopup()}
           </Popup>
           : null
         }

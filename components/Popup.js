@@ -1,6 +1,9 @@
 import React from 'react';
 import '../styles/components/Popup.css';
 
+// class which manages life-cycle of a single popup
+// mainly does the blurring of any elements with class name of `blurrable`
+// and runs closePopup when closing
 class Popup extends React.Component{
   constructor(props){
     super(props);
