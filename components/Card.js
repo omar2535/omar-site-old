@@ -29,16 +29,16 @@ const Card = function(props){
         }
         .card:hover {
           box-shadow: 0 8px 16px 0 gray;
+          transform: scale(1.1);
         }
         .content{
           overflow-wrap: break-word;
         }
       `}</style>
-      <h2>{props.title}</h2>
+      <a href={props.link} target="_blank"><h2>{props.title}</h2></a>
       <hr />
       <div className='content'>
         <p>{props.content}</p>
-        <a href={props.link}>{props.link}</a>
       </div>
     </div>
   )

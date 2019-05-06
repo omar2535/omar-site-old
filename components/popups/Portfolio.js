@@ -9,27 +9,31 @@ class Portfolio extends React.Component{
           title: 'Omar-site',
           content: `Omar\'s cool site that he made on a whim. The site
                     is still in the process of development.`,
-          link: 'https://www.google.ca'
+          link: 'https://github.com/omar2535/omar-site'
         },
         {
-          title: 'Sample2',
-          content: 'Sample 2',
-          link: 'https://www.google.ca'
+          title: 'Stock Scraper API',
+          content: `🥄 A scraper written in javascript which uses express and node to
+                    bundle up data scraped from Yahoo Finance and serve it as a REST API.`,
+          link: 'https://github.com/omar2535/stock-scraper'
         },
         {
-          title: 'Sample3',
-          content: 'Sample 3',
-          link: 'https://www.google.ca'
+          title: 'Element Replacer',
+          content: '🔄 A fun little chrome extension to replace html elements.',
+          link: 'https://github.com/omar2535/ElementReplacer'
         },
         {
-          title: 'Sample4',
-          content: 'Sample 4',
-          link: 'https://www.google.ca'
+          title: 'Memory Modifier',
+          content: `💻 A collection of scripts which modifies the memory of 
+                    video games at runtime. It features both external and internal
+                    memory modification.`,
+          link: 'https://github.com/omar2535/Reverse-Learngineering'
         },
         {
-          title: 'Sample5',
-          content: 'Sample 5',
-          link: 'https://www.google.ca'
+          title: 'Transit App',
+          content: `🚇 A transit app built in class which pulls from the Vancouver Translink bus
+                    and tells users where and when each bus is.`,
+          link: 'https://github.com/omar2535/TransitApp'
         },
       ]
     };
