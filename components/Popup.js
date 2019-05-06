@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/Popup.css';
 
 // class which manages life-cycle of a single popup
 // mainly does the blurring of any elements with class name of `blurrable`
@@ -145,6 +144,32 @@ class Popup extends React.Component{
             padding-left: 1em;
             padding-right: 1em;
             padding-top: 1em
+          }
+          /* For Scrollbar */
+          /* width */
+          ::-webkit-scrollbar {
+            width: 8px;
+          }
+
+          /* Track */
+          ::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          /* Handle */
+          ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #888;
+          }
+
+          /* Handle on hover */
+          ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            border-radius: 10px;
+          }
+
+          ::-webkit-scrollbar-corner{
+            background: transparent;
           }
         `}
         </style>
