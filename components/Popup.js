@@ -113,7 +113,7 @@ class Popup extends React.Component{
             background-color: rgba(0,0,0,0);
           }
           .popup_inner{
-            position: absolute;
+            position: fixed;
             padding-top: 10px;
             left: 15%;
             right: 25%;

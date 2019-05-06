@@ -21,44 +21,25 @@ class Navbar extends React.Component{
                 text-align: center;
                 font-size: 16px;
                 border: 2px solid white;
-                width: 20%;
+                width: 10%;
+                margin: 10px auto;
+                border-radius: 1em;
               }
               .flexdiv{
                 display: flex;
                 align-items: center;
                 justify-content: center;
               }
-              .btn-group .button:not(:last-child) {
-                border-right: none; /* Prevent double borders */
-              }
               .btn-group .button:hover {
                 background-color: rgba(255, 255, 255, 0.5);
                 -webkit-transition-duration: 0.2s;
+                transform(1.1);
               }
-              .btn-group .button:first-child {
-                border-radius: 20px 0px 0px 20px;
-              }
-              .btn-group .button:last-child {
-                border-radius: 0px 20px 20px 0px;
-              }
-              @media screen and (max-width: 300px) {
+              @media screen and (max-width: 500px) {
               .flexdiv{
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-              }
-              .btn-group .button:not(:last-child) {
-                border-bottom: none; /* Prevent double borders */
-                border-right: 2px solid white;
-              }
-              .btn-group .button {
-                border-radius: 2px 2px 2px 2px;
-              }
-              .btn-group .button:first-child {
-                border-radius: 2px 2px 2px 2px;
-              }
-              .btn-group .button:last-child {
-                border-radius: 2px 2px 2px 2px;
               }
             }
             `}
