@@ -49,6 +49,11 @@ class Layout extends Component {
           button:focus {
             outline: 0 !important;
           }
+          a:visited { text-decoration: none; color:white; }
+          a:hover { text-decoration: none; color:gray; }
+          a:focus { text-decoration: none; color:white; }
+          a:hover, a:active { text-decoration: none; color:gray }
+          a{ color: white; text-decoration: none;}
         `}
         </style>
         <img id='background-image' className={`${layoutCSS.background} blurrable`} src={'/static/images/background.jpg'}/>

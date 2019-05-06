@@ -14,27 +14,20 @@ class Contact extends React.Component{
 
   render(){
     return (
-      <div>
+      <div id='contact'>
         <style jsx>{`
         ul{ list-style: none; }
         #contact{ color: white; }
-        h3{ text-align: center; }
+        h1{ text-align: center; }
         li{ font-size: 3em; }
-        a:visited { text-decoration: none; color:white; }
-        a:hover { text-decoration: none; color:gray; }
-        a:focus { text-decoration: none; color:white; }
-        a:hover, a:active { text-decoration: none; color:gray }
-        a{ color: white; }
       `}</style>
-        <div id='contact'>
-          <h3>Contact Information</h3>
-          <ul>
-            <li><a rel='external' href={`mailto:${this.state.email}`}><FaAt /></a></li>
-            <li><a rel='external' href={this.state.linkedin} target="_blank"><FaLinkedin /></a></li>
-            <li><a rel='external' href={this.state.github} target="_blank"><FaGithub /></a></li>
-            <li><a rel='external' href={this.state.twitter} target="_blank"><FaTwitterSquare /></a></li>
-          </ul>
-        </div>
+        <h1>Contact Information</h1>
+        <ul>
+          <li><a rel='external' href={`mailto:${this.state.email}`}><FaAt /></a></li>
+          <li><a rel='external' href={this.state.linkedin} target="_blank"><FaLinkedin /></a></li>
+          <li><a rel='external' href={this.state.github} target="_blank"><FaGithub /></a></li>
+          <li><a rel='external' href={this.state.twitter} target="_blank"><FaTwitterSquare /></a></li>
+        </ul>
       </div>
     )
   }
