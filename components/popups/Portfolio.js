@@ -1,5 +1,6 @@
 import Card from '../Card';
-
+// portfolio component
+// add portfolio contents here?
 class Portfolio extends React.Component{
   constructor(props){
     super(props);

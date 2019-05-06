@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import layoutCSS from '../styles/components/Layout.css';
 import Navbar from './Navbar';
 import Popup from './Popup';
-import Contact from '../components/popups/Contact';
 
 // for full screen background image
 const headerStyle = {
