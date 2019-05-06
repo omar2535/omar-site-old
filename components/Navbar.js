@@ -24,6 +24,7 @@ class Navbar extends React.Component{
                 width: 10%;
                 margin: 10px auto;
                 border-radius: 1em;
+                cursor: pointer;
               }
               .flexdiv{
                 display: flex;
