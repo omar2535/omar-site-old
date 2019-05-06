@@ -6,8 +6,9 @@ class Portfolio extends React.Component{
     this.state = {
       cards:[
         {
-          title: 'Sample1',
-          content: 'Sample 1',
+          title: 'Omar-site',
+          content: `Omar\'s cool site that he made on a whim. The site
+                    is still in the process of development.`,
           link: 'https://www.google.ca'
         },
         {

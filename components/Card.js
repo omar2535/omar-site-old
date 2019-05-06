@@ -12,6 +12,7 @@ const Card = function(props){
           border-color: white;
           border-radius: 5px;
           width: 45%;
+          height: auto;
           transition: 0.1s;
           margin: 10px;
         }
@@ -21,16 +22,16 @@ const Card = function(props){
           opacity: 0;
         }
         h2{
+          text-align: center;
           margin-top: 0px;
           margin-bottom: 0px;
+          overflow-wrap: break-word;
         }
         .card:hover {
           box-shadow: 0 8px 16px 0 gray;
         }
         .content{
-          overflow: scroll;
-          white-space:nowrap;
-          overflow:hidden;
+          overflow-wrap: break-word;
         }
       `}</style>
       <h2>{props.title}</h2>
