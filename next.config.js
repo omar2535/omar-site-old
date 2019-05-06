@@ -3,5 +3,6 @@ module.exports = {
     return {
       '/': { page: '/index' }
     };
-  }
+  },
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/omar-site' : '',
 };

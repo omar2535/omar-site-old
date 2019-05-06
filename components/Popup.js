@@ -6,29 +6,11 @@ import React from 'react';
 class Popup extends React.Component{
   constructor(props){
     super(props);
-    this.setMountAnimation = this.setMountAnimation.bind(this);
     this.setUnmountAnimation = this.setUnmountAnimation.bind(this);
     this.unMount = this.unMount.bind(this);
-    this.state = {
-      style: `
-          .popup_inner{
-            -webkit-animation-name: zoom;
-            animation-name: zoom;
-          }
-          @-webkit-keyframes zoom {
-            from {transform: scale(0);}
-            to {transform: scale(1);}
-          }
-          @keyframes zoom {
-            from {transform: scale(0);}
-            to {transform: scale(1);}
-          }
-      `
-    };
   }
 
   componentDidMount(){
-    setTimeout(this.setMountAnimation, 10); // to make it async
     var css = `
       -webkit-filter: blur(3px);
       filter: blur(3px);
@@ -39,26 +21,6 @@ class Popup extends React.Component{
     for(let element of elements){
       element.style.cssText = css;
     }
-  }
-
-  // to set zoom animation when component mounts
-  setMountAnimation(){
-    this.setState({
-      style: `
-          .popup_inner{
-            -webkit-animation-name: zoom;
-            animation-name: zoom;
-          }
-          @-webkit-keyframes zoom {
-            from {transform: scale(0);}
-            to {transform: scale(1);}
-          }
-          @keyframes zoom {
-            from {transform: scale(0);}
-            to {transform: scale(1);}
-          }
-      `
-    });
   }
 
   setUnmountAnimation(){
@@ -86,20 +48,34 @@ class Popup extends React.Component{
   componentWillUnmount() {
     var elements = document.getElementsByClassName('blurrable');
     for (let element of elements) {
-      element.style.filter = 'blur(0px)';
+      element.style.cssText = `
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      -webkit-transition: 2s ease -in -out;
+      transition: all 0.2s ease-out;`;
     }
   }
 
   unMount(){
-    this.setUnmountAnimation();
-    setTimeout(this.props.closePopup, 500);
+    this.props.closePopup();
   }
 
   render(){
     return(
       <div className='popup' data-effect="mfp-move-from-top" id='popup'>
         <style jsx>{`
-          ${this.state.style}
+          .popup_inner{
+            -webkit-animation-name: zoom;
+            animation-name: zoom;
+          }
+          @-webkit-keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+          }
+          @keyframes zoom {
+            from {transform: scale(0);}
+            to {transform: scale(1);}
+          }
           .popup{
             position: fixed;
             width: 100%;
