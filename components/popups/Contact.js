@@ -1,15 +1,50 @@
-import { FaGithub, FaAt, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaAt, FaTwitterSquare, FaLinkedin, FaAddressBook } from "react-icons/fa";
 
 // function for contact information
 class Contact extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      github: 'https://github.com/omar2535',
-      email: 'omar2535@alumni.ubc.ca',
-      twitter: 'https://twitter.com/Omar_2535',
-      linkedin: 'https://www.linkedin.com/in/omar2535/'
+      contact_methods: [
+        {
+          platform: 'github',
+          info: 'https://github.com/omar2535',
+          icon: FaGithub
+        },
+        {
+          platform: 'gmail',
+          info: 'mailto:omar2535@alumni.ubc.ca',
+          icon: FaAt
+        },
+        {
+          platform: 'twitter',
+          info: 'https://twitter.com/Omar_2535',
+          icon: FaTwitterSquare
+        },
+        {
+          platform: 'linkedin',
+          info: 'https://www.linkedin.com/in/omar2535/',
+          icon: FaLinkedin
+        },
+      ]
     };
+  }
+
+  // creates list elements for links to contact information
+  createLinksToContacts(){
+    let created_links = [];
+    for(var i=0; i<this.state.contact_methods.length; i++){
+      var current = this.state.contact_methods[i];
+      var platform = current.platform;
+      var info = current.info;
+      var Icon = current.icon || FaAddressBook
+      created_links.push(
+        (<li style={{ fontSize: `3em`}} key={`${platform}-${info}`}>
+          <a rel='external' target="_blank" href={info}><Icon /></a>
+        </li>)
+      )
+    }
+    return created_links;
   }
 
   render(){
@@ -23,10 +58,7 @@ class Contact extends React.Component{
       `}</style>
         <h1>Contact Information</h1>
         <ul>
-          <li><a rel='external' href={`mailto:${this.state.email}`}><FaAt /></a></li>
-          <li><a rel='external' href={this.state.linkedin} target="_blank"><FaLinkedin /></a></li>
-          <li><a rel='external' href={this.state.github} target="_blank"><FaGithub /></a></li>
-          <li><a rel='external' href={this.state.twitter} target="_blank"><FaTwitterSquare /></a></li>
+          {this.createLinksToContacts()}
         </ul>
       </div>
     )
