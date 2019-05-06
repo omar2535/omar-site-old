@@ -13,21 +13,20 @@ class Navbar extends React.Component{
         <div className={`blurrable btn-group`} id='btn-group'>
           <style jsx>
             {`
-              .Navbar{
-                text-color: white;
-                text-align: center;
-              }
               .btn-group .button {
                 background-color: transparent;
                 border: none;
                 color: white;
                 padding: 15px 32px;
                 text-align: center;
-                text-decoration: none;
-                display: inline-block;
                 font-size: 16px;
-                cursor: pointer;
                 border: 2px solid white;
+                width: 20%;
+              }
+              .flexdiv{
+                display: flex;
+                align-items: center;
+                justify-content: center;
               }
               .btn-group .button:not(:last-child) {
                 border-right: none; /* Prevent double borders */
@@ -42,12 +41,34 @@ class Navbar extends React.Component{
               .btn-group .button:last-child {
                 border-radius: 0px 20px 20px 0px;
               }
+              @media screen and (max-width: 300px) {
+              .flexdiv{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              }
+              .btn-group .button:not(:last-child) {
+                border-bottom: none; /* Prevent double borders */
+                border-right: 2px solid white;
+              }
+              .btn-group .button {
+                border-radius: 2px 2px 2px 2px;
+              }
+              .btn-group .button:first-child {
+                border-radius: 2px 2px 2px 2px;
+              }
+              .btn-group .button:last-child {
+                border-radius: 2px 2px 2px 2px;
+              }
+            }
             `}
           </style>
           <Fade timer='5s' name='buttons'>
-            <button className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Intro)}>Intro</button>
-            <button className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Portfolio)}>Portfolio</button>
-            <button className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Contact)}>Contact</button>
+            <div className='flexdiv'>
+              <a className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Intro)}>Intro</a>
+              <a className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Portfolio)}>Portfolio</a>
+              <a className="button" onClick={this.props.openPopup.bind(this, PopupComponentExporter.Contact)}>Contact</a>
+            </div>
           </Fade>
         </div>
       </div>
