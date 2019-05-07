@@ -124,7 +124,7 @@ class Layout extends Component {
           }
         `}
         </style>
-        <img id='background-image' className={`background blurrable`} src='/static/images/background.jpg'/>
+        <img id='background-image' className={`background blurrable`} src='/static/images/star-background.jpg'/>
         <Header />
         <span className = {`content`}>
           {this.props.children}
