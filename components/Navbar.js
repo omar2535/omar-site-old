@@ -13,12 +13,16 @@ class Navbar extends React.Component{
         <div className={`blurrable btn-group`} id='btn-group'>
           <style jsx>
             {`
+              .btn-group{
+                margin-top: 2em;
+                padding-top: 2em;
+              }
               .btn-group .button {
                 background-color: transparent;
                 border: none;
                 color: white;
                 padding: 15px 32px;
-                font-size: 16px;
+                font-size: 1.5em;
                 border: 2px solid white;
                 margin: 10px auto;
                 border-radius: 1em;

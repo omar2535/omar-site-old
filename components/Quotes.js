@@ -1,59 +1,33 @@
+import quoteData from '../static/resources/quotes.json';
+
 class Quotes extends React.Component{
   constructor(props) {
     super(props);
     this.chooseRandomQuote = this.chooseRandomQuote.bind(this);
+    this.newQuote = this.newQuote.bind(this);
     this.state = {
-      quotes: [
-        {
-          author: 'Fidel Castro',
-          quote: `The equal right of all citizens to health, education, work, food, security, culture, science,
-                  and wellbeing - that is, the same rights we proclaimed when we began our struggle, in addition to those which emerge from our dreams of
-                  justice and equality for all inhabitants of our world - is what I wish for all.`
-        },
-        {
-          author: 'Mark Twain',
-          quote: `Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.`
-        },
-        {
-          author: 'David Brinkley',
-          quote: `A successful man is one who can lay a firm foundation with the bricks others have thrown at him`
-        },
-        {
-          author: 'Albert Einstein',
-          quote: `Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.`
-        },
-        {
-          author: 'Charles Darwin',
-          quote: `A man who dares to waste one hour of time has not discovered the value of life`
-        },
-        {
-          author: 'Neil deGrasse Tyson',
-          quote: `The good thing about science is that it's true whether or not you believe in it.`
-        },
-        {
-          author: 'Marie Curie',
-          quote: `Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.`
-        },
-        {
-          author: 'Issac Newton',
-          quote: `If I have seen further it is by standing on the shoulders of Giants.`
-        },
-        {
-          author: 'Stephen Hawking',
-          quote: `One, remember to look up at the stars and not down at your feet. Two, never give up work.
-                  Work gives you meaning and purpose and life is empty without it.
-                  Three, if you are lucky enough to find love, remember it is there and don't throw it away.`
-        }
-      ],
-      chosen_quote: null
+      quotes: quoteData,
+      chosen_quote: null,
+      animation_delay: 0.5,
+      quote_refresh_interval: 20
     };
   }
   componentDidMount() {
+    let refreshInterval = this.state.quote_refresh_interval * 1000;
     if(this.state.chosen_quote){
-      this.interval = setInterval(this.chooseRandomQuote, 30000);
+      this.interval = setInterval(this.newQuote, refreshInterval);
     }else{
       this.chooseRandomQuote();
+      this.interval = setInterval(this.newQuote, refreshInterval);
     }
+  }
+
+  newQuote(){
+    document.getElementById('quote').style.opacity = 0;
+    setTimeout(() => { 
+      this.chooseRandomQuote();
+      document.getElementById('quote').style.opacity = 1;
+    }, this.state.animation_delay * 1000);
   }
 
   componentWillUnmount() {
@@ -65,12 +39,12 @@ class Quotes extends React.Component{
     var quote_object = this.state.quotes[random_quote_index];
     this.setState({
       chosen_quote: (
-        <p style={{}}>
+        <p style={{fontSize: `1.5em`}}>
           <i>
-            “{quote_object.quote}”
+            “{quote_object.quoteText}”
         </i>
           <br />
-          - {quote_object.author}
+          - {quote_object.quoteAuthor? quote_object.quoteAuthor : `Unknown Author`}
         </p>
       )
     });
@@ -79,6 +53,14 @@ class Quotes extends React.Component{
   render(){
     return(
       <div id='quote'>
+        <style jsx>
+          {`
+            #quote{
+              transition: ${this.state.animation_delay}s;
+              opacity: 1;
+            }
+          `}
+        </style>
         {this.state.chosen_quote}
       </div>
     )

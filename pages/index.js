@@ -27,7 +27,7 @@ class Index extends React.Component{
             <div id='main-text' className={`blurrable`}>
               <Quotes />
             </div>
-            </Fade>
+          </Fade>
         </Layout>
       </div>
     )

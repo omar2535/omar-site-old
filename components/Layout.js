@@ -133,7 +133,9 @@ class Layout extends Component {
         <div id='content-div'>
           <Header />
           <div className={`content`}>
-            {this.props.children}
+            <div className='children-content'>
+              {this.props.children}
+            </div>
             <Navbar openPopup={this.openPopup.bind(this)} />
           </div>
           {this.state.showPopup ?
