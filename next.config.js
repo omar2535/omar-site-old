@@ -4,5 +4,5 @@ module.exports = {
       '/': { page: '/' }
     };
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/omar-site' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/omar-site' : '',
 };
