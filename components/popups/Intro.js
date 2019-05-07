@@ -14,7 +14,7 @@ class Intro extends React.Component{
         <h1>Intro</h1>
         <p>
           Hi, my name is Omar. I am a programmer & student who loves
-          to code on his spare time.
+          to code in my spare time.
       </p>
       </div>
     )

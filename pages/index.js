@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Fade from '../components/Fade';
 
+// quotes can be pulled from an API
 class Index extends React.Component{
   constructor(props){
     super(props);
@@ -46,14 +47,20 @@ class Index extends React.Component{
                   Work gives you meaning and purpose and life is empty without it.
                   Three, if you are lucky enough to find love, remember it is there and don't throw it away.`
         }
-      ]
+      ],
+      chosen_quote: null
     };
+  }
+
+  componentDidMount(){
+    this.chooseRandomQuote();
   }
 
   chooseRandomQuote(){
     var random_quote_index =  Math.floor(Math.random() * Math.floor(this.state.quotes.length));
     var quote_object = this.state.quotes[random_quote_index];
-    return(
+    this.setState({
+      chosen_quote: (
       <p>
         <i>
           “{quote_object.quote}”
@@ -61,7 +68,7 @@ class Index extends React.Component{
         <br/>
         - {quote_object.author}
       </p>
-    )
+    )});
   }
 
   render(){
@@ -78,7 +85,7 @@ class Index extends React.Component{
           </style>
           <Fade timer='3s' name='index'>
             <div id='main-text' className={`blurrable`}>
-              {this.chooseRandomQuote()}
+              {this.state.chosen_quote}
             </div>
             </Fade>
         </Layout>
