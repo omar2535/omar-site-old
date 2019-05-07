@@ -5,7 +5,8 @@ import Popup from './Popup';
 
 // for full screen background image
 const headerStyle = {
-  height: `100vh`
+  height: `100vh`,
+  position: `relative`
 };
 
 // main layout of website
@@ -55,7 +56,6 @@ class Layout extends Component {
           body{
             height: 100%;
             margin: 0;
-            font: 400 15px/1.8 "Lato", sans-serif;
             color: #777;
             background-color: black;
           }
@@ -122,20 +122,27 @@ class Layout extends Component {
             from { opacity: 0; }
             to { opacity: 1; }
           }
+          .image-div{
+            position: relative;
+          }
         `}
         </style>
-        <img id='background-image' className={`background blurrable`} src='/static/images/star-background.jpg'/>
-        <Header />
-        <span className = {`content`}>
-          {this.props.children}
-          <Navbar openPopup={this.openPopup.bind(this)}/>
-        </span>
-        {this.state.showPopup ?
-          <Popup closePopup={this.closePopup.bind(this)}>
-            {this.generatePopup()}
-          </Popup>
-          : null
-        }
+        <div id='image-div'>
+          <img id='background-image' className={`background blurrable`} src='/static/images/star-background.jpg' />
+        </div>
+        <div id='content-div'>
+          <Header />
+          <div className={`content`}>
+            {this.props.children}
+            <Navbar openPopup={this.openPopup.bind(this)} />
+          </div>
+          {this.state.showPopup ?
+            <Popup closePopup={this.closePopup.bind(this)}>
+              {this.generatePopup()}
+            </Popup>
+            : null
+          }
+        </div>
       </div>
     )
   }

@@ -13,9 +13,10 @@ class Header extends React.Component {
             width: 100%;
             text-align: center;
             color: rgb(255, 255, 255);
-            font-size: 25px;
-            letter-spacing: 5px;
+            font-size: 50px;
             transform: translate(-50%, -50%);
+            margin-bottom: 2em;
+            margin-top: 1em;
           }
           `}
         </style>

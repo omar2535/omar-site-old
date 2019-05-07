@@ -11,7 +11,7 @@ const Card = function(props){
           border-width: 2px;
           border-color: white;
           border-radius: 5px;
-          width: 45%;
+          width: 70%;
           height: auto;
           transition: 0.1s;
           margin: 10px;
@@ -29,7 +29,7 @@ const Card = function(props){
         }
         .card:hover {
           box-shadow: 0 8px 16px 0 gray;
-          transform: scale(1.1);
+          transform: scale(1.05);
         }
         .content{
           overflow-wrap: break-word;

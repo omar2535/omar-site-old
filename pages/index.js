@@ -61,7 +61,7 @@ class Index extends React.Component{
     var quote_object = this.state.quotes[random_quote_index];
     this.setState({
       chosen_quote: (
-      <p>
+      <p style={{ }}>
         <i>
           “{quote_object.quote}”
         </i>
@@ -78,8 +78,10 @@ class Index extends React.Component{
           <style jsx>
             {`
               #main-text{
-                padding-left: 15em;
-                padding-right: 15em;
+                padding-left: 5em;
+                padding-right: 5em;
+                text-align: center;
+                margin-top: 5em;
               }
             `}
           </style>

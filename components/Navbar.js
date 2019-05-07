@@ -18,10 +18,8 @@ class Navbar extends React.Component{
                 border: none;
                 color: white;
                 padding: 15px 32px;
-                text-align: center;
                 font-size: 16px;
                 border: 2px solid white;
-                width: 10%;
                 margin: 10px auto;
                 border-radius: 1em;
                 cursor: pointer;
@@ -41,6 +39,9 @@ class Navbar extends React.Component{
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+              }
+              .button{
+                text-align: center;
               }
             }
             `}
