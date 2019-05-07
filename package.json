@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "git add . && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy_gh_pages": "git add . && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "deploy_netlify": "npm run build && npm run export"
   },
   "keywords": [],
   "author": "",
