@@ -1,6 +1,7 @@
 class Quotes extends React.Component{
   constructor(props) {
     super(props);
+    this.chooseRandomQuote = this.chooseRandomQuote.bind(this);
     this.state = {
       quotes: [
         {
@@ -48,7 +49,15 @@ class Quotes extends React.Component{
     };
   }
   componentDidMount() {
-    this.chooseRandomQuote();
+    if(this.state.chosen_quote){
+      this.interval = setInterval(this.chooseRandomQuote, 30000);
+    }else{
+      this.chooseRandomQuote();
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   chooseRandomQuote() {

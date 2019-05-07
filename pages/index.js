@@ -19,6 +19,7 @@ class Index extends React.Component{
                 padding-right: 5em;
                 text-align: center;
                 margin-top: 5em;
+                height: 8em;
               }
             `}
           </style>
