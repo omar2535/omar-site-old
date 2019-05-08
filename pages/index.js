@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Fade from '../components/Fade';
 import Quotes from '../components/Quotes';
+import React from 'react';
 
 // quotes can be pulled from an API
 class Index extends React.Component{
@@ -8,9 +9,11 @@ class Index extends React.Component{
     super(props);
   }
 
+  // render function
   render(){
     return(
       <div className='app' id='app'>
+        <link rel="shortcut icon" href="../static/images/orz-logo-small.png" />
         <Layout>
           <style jsx>
             {`
