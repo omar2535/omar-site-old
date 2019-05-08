@@ -15,6 +15,7 @@ const Card = function(props){
           height: auto;
           transition: 0.1s;
           margin: 10px;
+          font-size: 2vw;
         }
         hr{
           margin-top: 0px;

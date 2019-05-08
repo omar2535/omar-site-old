@@ -124,7 +124,7 @@ class Popup extends React.Component{
           /* For Scrollbar */
           /* width */
           ::-webkit-scrollbar {
-            width: 8px;
+            width: 0.5vw;
           }
 
           /* Track */
