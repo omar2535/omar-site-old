@@ -125,6 +125,9 @@ class Layout extends Component {
           .image-div{
             position: relative;
           }
+          .children-content{
+            position: relative;
+          }
         `}
         </style>
         <div id='image-div'>

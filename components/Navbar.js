@@ -15,7 +15,7 @@ class Navbar extends React.Component{
             {`
               .btn-group{
                 margin-top: 2em;
-                padding-top: 2em;
+                position: relative;
               }
               .btn-group .button {
                 background-color: transparent;
@@ -39,15 +39,15 @@ class Navbar extends React.Component{
                 transform(1.1);
               }
               @media screen and (max-width: 500px) {
-              .flexdiv{
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                .flexdiv{
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                }
+                .button{
+                  text-align: center;
+                }
               }
-              .button{
-                text-align: center;
-              }
-            }
             `}
           </style>
           <Fade timer='5s' name='buttons'>

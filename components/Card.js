@@ -7,7 +7,7 @@ const Card = function(props){
     <div className = 'card'>
       <style jsx>{`
         .card{
-          border-style: dotted;
+          border-style: solid;
           border-width: 2px;
           border-color: white;
           border-radius: 5px;

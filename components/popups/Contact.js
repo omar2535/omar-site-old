@@ -1,4 +1,4 @@
-import { FaGithub, FaAt, FaTwitterSquare, FaLinkedin, FaAddressBook } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaTwitterSquare, FaLinkedin, FaAddressBook } from "react-icons/fa";
 
 // function for contact information
 class Contact extends React.Component{
@@ -7,14 +7,14 @@ class Contact extends React.Component{
     this.state = {
       contact_methods: [
         {
+          platform: 'gmail',
+          info: 'mailto:omar2535@alumni.ubc.ca',
+          icon: FaEnvelope
+        },
+        {
           platform: 'github',
           info: 'https://github.com/omar2535',
           icon: FaGithub
-        },
-        {
-          platform: 'gmail',
-          info: 'mailto:omar2535@alumni.ubc.ca',
-          icon: FaAt
         },
         {
           platform: 'twitter',

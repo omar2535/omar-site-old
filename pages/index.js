@@ -2,18 +2,28 @@ import Layout from '../components/Layout';
 import Fade from '../components/Fade';
 import Quotes from '../components/Quotes';
 import React from 'react';
+import Head from 'next/head';
 
 // quotes can be pulled from an API
 class Index extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      title: 'Omar\'s website'
+    };
   }
 
   // render function
   render(){
     return(
       <div className='app' id='app'>
-        <link rel="shortcut icon" href="../static/images/orz-logo-small.png" />
+        <Head>
+          <meta charSet="utf-8" />
+          <title>{this.state.title}</title>
+          <meta name="viewport" content="width=1000"></meta>
+          <link rel="shortcut icon" href="../static/images/rocket-code-icon.png" />
+        </Head>
+        
         <Layout>
           <style jsx>
             {`
@@ -23,6 +33,11 @@ class Index extends React.Component{
                 text-align: center;
                 margin-top: 5em;
                 height: 8em;
+              }
+              @media screen and (max-width: 650px) {
+                #main-text{
+                  height: 100%;
+                }
               }
             `}
           </style>
