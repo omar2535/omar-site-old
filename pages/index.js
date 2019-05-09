@@ -20,7 +20,6 @@ class Index extends React.Component{
         <Head>
           <meta charSet="utf-8" />
           <title>{this.state.title}</title>
-          <meta name="viewport" content="width=1000"></meta>
           <link rel="shortcut icon" href="../static/images/rocket-code-icon.png" />
         </Head>
         
