@@ -7,9 +7,8 @@ class Intro extends React.Component{
       intro: ` Hi there! I'm Omar. I am a student at the University of British Columbia
                pursuing a degree in Physics and Computer Science.
                On my free time, I love to code and learn about a variety of subjects such as investing
-               and interesting scientific topics. I also love to listen to podcasts and audio books
-               as I believe that consuming media by listening is a great way to pass time and learn about
-               different subjects while doing something else. Feel free to look around!`
+               and interesting scientific topics. I also love to listen to podcasts and audio books. 
+               Take a look around!`
     };
   }
 
